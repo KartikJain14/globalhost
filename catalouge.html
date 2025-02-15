@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Host</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f4f9; color: #333; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; background-color: #1e293b; padding: 10px 20px; color: white; }
+        .nav-button { background-color: #4f46e5; color: white; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; }
+        .nav-button:hover { background-color: #4338ca; }
+        .search-bar { padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 300px; }
+        .search-container { flex-grow: 1; display: flex; justify-content: center; }
+        .profile-photo { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #ccc; }
+        .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .container { display: flex; }
+        .sidebar { width: 200px; background-color: #e2e8f0; padding: 20px; }
+        .main-content { flex-grow: 1; padding: 20px; display: flex; flex-wrap: wrap; gap: 20px; }
+        .tools-category { margin-bottom: 20px; width: 100%; }
+        .tools-category h3 { color: #1e293b; margin-bottom: 10px; }
+        .tools-grid { display: flex; flex-wrap: wrap; gap: 15px; }
+        .tool-card { background-color: white; padding: 15px; width: 200px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .tool-card img { width: 50px; height: 50px; border-radius: 8px; margin-bottom: 10px; }
+        .tool-info h4 { margin: 5px 0; }
+        .tool-button { background-color: #1e293b; color: white; padding: 8px 12px; border: none; border-radius: 4px; text-decoration: none; margin-top: 10px; }
+        .tool-button:hover { background-color: #374151; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/" class="nav-button">Home</a>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search...">
+        </div>
+        <a href="/me">
+            <div class="profile-photo">
+                <img src="https://i.fbcd.co/products/original/gh-hg-creative-letter-logo-designs-2-a2ad1ae155aa6e0101ea9fa4d1538009297a0295d117ed83423dc006169487eb.jpg" alt="Profile Photo">
+            </div>
+        </a>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+             <h2>Explore AI Tools</h2>
+        </div>
+        <div class="main-content">
+            <div class="tools-category">
+                <h3>Chatbots & Conversational AI</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <img src="https://seeklogo.com/images/C/chatgpt-logo-02AFA704B5-seeklogo.com.png" alt="ChatGPT">
+                        <div class="tool-info">
+                            <h4>ChatGPT</h4>
+                            <p>AI-powered conversational assistant by OpenAI for various text-based tasks.</p>
+                            <a href="https://chat.openai.com/" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://img.gptbots.cc/article/en/dialogflow-logo.webp" alt="Dialogflow">
+                        <div class="tool-info">
+                            <h4>Dialogflow</h4>
+                            <p>Google’s AI tool for creating conversational experiences for applications and devices.</p>
+                            <a href="https://cloud.google.com/dialogflow" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://purepng.com/public/uploads/large/purepng.com-ibm-logologobrand-logoiconslogos-251519939176ka7y8.png" alt="IBM Watson Assistant">
+                        <div class="tool-info">
+                            <h4>IBM Watson Assistant</h4>
+                            <p>AI chatbot for building conversational solutions for business applications.</p>
+                            <a href="https://www.ibm.com/watson/assistant" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://support.cognigy.com/hc/article_attachments/6230351460764" alt="Amazon Lex">
+                        <div class="tool-info">
+                            <h4>Amazon Lex</h4>
+                            <p>AI service for building conversational interfaces using speech and text.</p>
+                            <a href="https://aws.amazon.com/lex/" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-category">
+                <h3>Image & Design AI</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <img src="https://seeklogo.com/images/O/openai-logo-8B9BFEDC26-seeklogo.com.png" alt="DALL·E">
+                        <div class="tool-info">
+                            <h4>DALL·E</h4>
+                            <p>AI model by OpenAI for generating images from textual descriptions.</p>
+                            <a href="https://openai.com/dall-e" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Midjourney_Emblem.svg/2048px-Midjourney_Emblem.svg.png" alt="MidJourney">
+                        <div class="tool-info">
+                            <h4>MidJourney</h4>
+                            <p>AI tool for generating creative artwork and images based on prompts.</p>
+                            <a href="https://www.midjourney.com/" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://static.canva.com/static/images/favicon.ico" alt="Canva">
+                        <div class="tool-info">
+                            <h4>Canva</h4>
+                            <p>Graphic design platform with AI-powered design suggestions and templates.</p>
+                            <a href="https://www.canva.com/" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://www.adobe.com/favicon.ico" alt="Adobe Firefly">
+                        <div class="tool-info">
+                            <h4>Adobe Firefly</h4>
+                            <p>AI-powered creative suite for generating unique images and design assets.</p>
+                            <a href="https://www.adobe.com/sensei/generative-ai/firefly.html" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tools-category">
+                <h3>AI for Business Intelligence & Analytics</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/10/Tableau-Logo.png" alt="Tableau">
+                        <div class="tool-info">
+                            <h4>Tableau</h4>
+                            <p>Data visualization and business intelligence tool.</p>
+                            <br>
+                            <a href="https://www.tableau.com/" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4hzOS5W2J2PjB4JssJDrmx1b7xFn0yt0uCw&s" alt="Power BI">
+                        <div class="tool-info">
+                            <h4>Power BI</h4>
+                            <p>Business analytics tool by Microsoft to visualize data and share insights.</p>
+                            <a href="https://powerbi.microsoft.com/" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/SAS_logo_horiz.svg" alt="SAS">
+                        <div class="tool-info">
+                            <h4>SAS</h4>
+                            <p>Advanced analytics and AI-powered business intelligence platform.</p>
+                            <a href="https://www.sas.com/" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToSX0_oZrRfiZxXOLe6Nl1H2uGwLUFa3c97w&s" alt="Looker">
+                        <div class="tool-info">
+                            <h4>Looker</h4>
+                            <p>Data exploration and business intelligence platform.</p>
+                            <a href="https://looker.com/" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tools-category">
+                <h3>AI for E-commerce & Retail</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <img src="https://www.citypng.com/public/uploads/preview/shopify-bag-icon-symbol-logo-701751695132537nenecmhs0u.png" alt="Shopify">
+                        <div class="tool-info">
+                            <h4>Shopify</h4>
+                            <p>E-commerce platform with AI-powered tools to optimize online stores.</p>
+                            <a href="https://www.shopify.com/" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://financesonline.com/uploads/2019/08/Salesforce-Einstein-logo1.png" alt="Salesforce">
+                        <div class="tool-info">
+                            <h4>Salesforce Einstein</h4>
+                            <p>AI-driven CRM platform for sales, marketing, and customer engagement.</p>
+                            <a href="https://www.salesforce.com/products/einstein/" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5210/5210822.png" alt="Adobe Experience Cloud">
+                        <div class="tool-info">
+                            <h4>Adobe Experience Cloud</h4>
+                            <p>AI-powered marketing and e-commerce optimization platform.</p>
+                            <a href="https://business.adobe.com/products/experience-cloud/overview.html" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/magento-icon.png" alt="Magento">
+                        <div class="tool-info">
+                            <h4>Magento</h4>
+                            <p>E-commerce platform with AI-driven personalization and recommendations.</p>
+                            <a href="https://business.adobe.com/products/magento/magento-commerce.html" class="tool-button" target="_blank">Visit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Host</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1e293b;
+      padding: 10px 20px;
+      color: white;
+      position: relative;
+    }
+    .nav-button {
+      background-color: #4f46e5;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    .nav-button:hover {
+      background-color: #4338ca;
+    }
+    .search-bar {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 300px;
+      margin: 0 auto;
+    }
+    .profile-photo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: gray;
+      margin-left: 10px;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .help-button {
+      position: absolute;
+      right: 160px;
+      background-color: #4f46e5;
+      color: white;
+      padding: 5px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .help-button:hover {
+      background-color: #4338ca;
+    }
+    .container {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .text-box {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      width: 700px;
+    }
+    .text-box h3 {
+      margin-top: 0;
+      color: #1e293b;
+    }
+    .text-area {
+      width: 90%;
+      height: 80px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 8px;
+    }
+    .update-button {
+      background-color: #1e293b;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .update-button:hover {
+      background-color: #374151;
+    }
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .logo {
+      height: 40px;
+    }
+
+    /* Chatbot Styles */
+    .chatbot-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+    .chatbot-button:hover {
+      background-color: #4338ca;
+    }
+    .chatbot-container {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 320px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+    .chatbot-header {
+      background-color: #4f46e5;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .chatbot-body {
+      padding: 12px;
+      height: 250px;
+      overflow-y: auto;
+      background-color: #f9fafb;
+    }
+    .bot-message, .user-message {
+      white-space: pre-wrap;
+      margin-bottom: 10px;
+    }
+    .chatbot-input {
+      padding: 10px;
+      border: none;
+      width: 100%;
+      box-sizing: border-box;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="/"><h2 style="color: #ccc;">GLOBAL HOST</h2></a>
+    <input type="text" class="search-bar" placeholder="Search...">
+    <a href="/ai" class="help-button">Help?</a>
+    <button class="nav-button" onclick="location.href='/';" style="position: absolute; right: 230px;">Find Match?</button>
+    <a href="/me">
+      <div class="profile-photo">
+        <img src="https://i.fbcd.co/products/original/gh-hg-creative-letter-logo-designs-2-a2ad1ae155aa6e0101ea9fa4d1538009297a0295d117ed83423dc006169487eb.jpg" alt="Profile Photo">
+      </div>
+    </a>
+  </div>
+
+  <div class="container">
+    <div class="text-box">
+      <h3>About You</h3>
+      <textarea id="aboutMe" class="text-area" placeholder="Describe yourself..."></textarea>
+      <h3>About Your Startup</h3>
+      <textarea id="startup" class="text-area" placeholder="Describe your startup..."></textarea>
+      <div class="button-container">
+        <button class="update-button" onclick="updateProfile()">Update</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chatbot -->
+  <button class="chatbot-button" onclick="toggleChatbot()">💬</button>
+  <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">🤖 Startup Assistant</div>
+    <div class="chatbot-body" id="chatbotBody">
+      Welcome! How can I assist you today?
+    </div>
+    <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Type your message here..." onkeypress="handleChatbotInput(event)">
+  </div>
+
+  <script>
+    // Toggle Chatbot visibility
+    function toggleChatbot() {
+      const chatbot = document.getElementById('chatbotContainer');
+      chatbot.style.display = chatbot.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Handle Enter key in chatbot input
+    function handleChatbotInput(event) {
+      if (event.key === "Enter") {
+        sendChatMessage();
+      }
+    }
+
+    // Helper functions to add formatted messages
+    function addBotMessage(message) {
+      const chatbotBody = document.getElementById('chatbotBody');
+      chatbotBody.innerHTML += `<div class="bot-message"><strong>AI:</strong><br><pre style="white-space: pre-wrap; margin: 0;">${message}</pre></div>`;
+      chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+
+    function addUserMessage(message) {
+      const chatbotBody = document.getElementById('chatbotBody');
+      chatbotBody.innerHTML += `<div class="user-message"><strong>You:</strong><br><pre style="white-space: pre-wrap; margin: 0;">${message}</pre></div>`;
+      chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+
+    // On load, fetch founder details
+    window.onload = function() {
+      const aboutMe = document.getElementById('aboutMe');
+      const startup = document.getElementById('startup');
+      fetch('/api/founder', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(response => response.json())
+      .then(founder => {
+        aboutMe.value = founder.bio;
+        startup.value = founder.startup;
+      });
+    };
+
+    // Update profile, validate idea, and get roadmap
+    async function updateProfile() {
+      const aboutMe = document.getElementById('aboutMe').value;
+      const startup = document.getElementById('startup').value;
+      const chatbot = document.getElementById('chatbotContainer');
+      chatbot.style.display = 'block';
+      const chatbotBody = document.getElementById('chatbotBody');
+      chatbotBody.innerHTML = `<div class="bot-message"><strong>AI:</strong><br><pre style="white-space: pre-wrap; margin: 0;">Processing your update...</pre></div>`;
+
+      try {
+        // 1) Update founder profile via PATCH
+        await fetch('/api/founder', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ bio: aboutMe, startup: startup })
+        });
+
+        // 2) Validate startup idea via POST /api/ai/validate
+        const validateResponse = await fetch('/api/ai/validate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ bio: aboutMe, startup: startup })
+        });
+        const validateData = await validateResponse.json();
+        addBotMessage(validateData.validation);
+
+        // 3) Get roadmap via POST /api/ai/roadmap
+        const roadmapResponse = await fetch('/api/ai/roadmap', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ startup: startup })
+        });
+        const roadmapData = await roadmapResponse.json();
+        addBotMessage(roadmapData.roadmap);
+      } catch (error) {
+        addBotMessage("There was an error processing your request.");
+      }
+    }
+
+    // Send user chat message to AI
+    async function sendChatMessage() {
+      const inputField = document.getElementById('chatbotInput');
+      const userMessage = inputField.value.trim();
+      if (userMessage === "") return;
+      addUserMessage(userMessage);
+      inputField.value = "";
+      addBotMessage("Thinking...");
+
+      const aboutMe = document.getElementById('aboutMe').value;
+      const startup = document.getElementById('startup').value;
+      try {
+        const response = await fetch('/api/ai/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ bio: aboutMe, startup: startup, question: userMessage })
+        });
+        const data = await response.json();
+        addBotMessage(data.answer);
+      } catch (error) {
+        addBotMessage("There was an error processing your message.");
+      }
+    }
+  </script>
+</body>
+</html>

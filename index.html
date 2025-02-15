@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Host</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f4f9; color: #333; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; background-color: #1e293b; padding: 10px 20px; color: white; }
+        .search-bar { padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 300px; margin: auto; display: block; margin-top: 20px; }
+        .profile-photo { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: gray; position: absolute; top: 10px; right: 10px; }
+        .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .button-container { display: flex; justify-content: center; margin-top: 30px; gap: 15px; }
+        .action-button { background-color: #4f46e5; color: white; padding: 14px 28px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        .action-button:hover { background-color: #4338ca; }
+        .cards-container { display: none; margin-top: 20px; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .card { background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; align-items: center; width: 350px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        .card-content { flex-grow: 1; }
+        .card h3 { margin: 0; color: #1e293b; }
+        .card p { margin: 5px 0; color: #555; }
+        .card-photo { width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-left: 15px; background-color: #ccc; display: flex; justify-content: center; align-items: center; }
+        .card-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .linkedin-button { background-color: #0077b5; color: white; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 8px; }
+        .linkedin-button:hover { background-color: #005fa3; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>Investor and Co-Founder Match Maker!</div>
+    </div>
+
+    <input type="text" class="search-bar" placeholder="Search...">
+
+    <a href="/me">
+        <div class="profile-photo">
+            <img src="https://i.fbcd.co/products/original/gh-hg-creative-letter-logo-designs-2-a2ad1ae155aa6e0101ea9fa4d1538009297a0295d117ed83423dc006169487eb.jpg" alt="Profile Photo">
+        </div>
+    </a>
+
+    <div class="button-container">
+        <button class="action-button" onclick="showInvestors()">Investor</button>
+        <button class="action-button" onclick="showCoFounders()">Co-founder</button>
+        <button class="action-button" onclick="window.location.href='ai';">Get Help</button>
+    </div>
+    <div class="cards-container" id="investorsContainer">
+        <!-- Investor Cards -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Ashneer Grover</h3>
+                <p>FinTech Investor with a passion for startups.</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvYChKUltn2VeuErdWk51WItRo0K5p4HjhnQ&s" alt="Ashneer Grover"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>Aman Gupta</h3>
+                <p>Co-founder and CEO OF boAt Lifestyle</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://m.economictimes.com/thumb/msid-108321398,width-1200,height-900,resizemode-4,imgsize-33166/aman-gupta.jpg" alt="Ashneer Grover"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>Anupam Mittal</h3>
+                <p>Founder and CEO of Shaadi.com</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://www.bookmyartistindia.com/wp-content/uploads/2024/10/Anupam-Mittal.jpg" alt="Ashneer Grover"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>Namita Thapar</h3>
+                <p>Executive Director of Emcure Pharmaceuticals</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://kuvera.in/blog/wp-content/uploads/2024/10/Namita-Thapar-1024x768.jpg" alt="Ashneer Grover"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>Vineeta Singh</h3>
+                <p>CEO and co-founder of Sugar Cosmetics</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://images.indianexpress.com/2023/01/vineeta-singh-shark-tank-india.jpg" alt="Ashneer Grover"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>Piyush Bansal</h3>
+                <p>Co-founder and Ceo of Lenskart</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://assets.entrepreneur.com/content/3x2/2000/1674100659-pbansal.jpg?format=pjeg&auto=webp&crop=4:3" alt="Ashneer Grover"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>Ghazal Alagh</h3>
+                <p>Co-founder and CIO of MamaEarth</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://assets.entrepreneur.com/content/1x1/300/20190703130908-GHAZALALAGH1-Copy.jpeg" alt="Ashneer Grover"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>Ritesh Agarwal</h3>
+                <p>Founder and CEO of OYO Rooms</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdXlxEH-KCWMoh8z8xv_gToA8V7sx9qn0Tng&s" alt="Ashneer Grover"></div>
+        </div>
+
+
+       
+    </div>
+
+    <div class="cards-container" id="coFoundersContainer">
+        <!-- Co-founder Cards -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Jeff Bezoz</h3>
+                <p>Founder and CEO of Amazon</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://i.guim.co.uk/img/media/ef573276855d9e04aaed3dae615757a8725e52d9/297_329_2974_1784/master/2974.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=54907bf26973da8d098262abe333b802" alt="Ashneer Grover"></div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>Mukesh Ambani</h3>
+                <p>Founder and CEO of Reliance</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://imageio.forbes.com/specials-images/imageserve/5c7d7829a7ea434b351ba0b6/0x0.jpg?format=jpg&crop=1837,1839,x206,y250,safe&height=416&width=416&fit=bounds" alt="Ashneer Grover"></div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>Mark Zuckerberg</h3>
+                <p>Founder and CEO of Meta</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg" alt="Ashneer Grover"></div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>ELon Musk</h3>
+                <p>Founder and CEO of Tesla</p>
+                <a href="https://www.linkedin.com" class="linkedin-button" target="_blank">Find on LinkedIn</a>
+            </div>
+            <div class="card-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Elon_Musk_Royal_Society_crop.jpg" alt="Ashneer Grover"></div>
+        </div>
+    </div>
+
+    <script>
+        function showInvestors() {
+            document.getElementById('investorsContainer').style.display = 'flex';
+            document.getElementById('coFoundersContainer').style.display = 'none';
+        }
+
+        function showCoFounders() {
+            document.getElementById('coFoundersContainer').style.display = 'flex';
+            document.getElementById('investorsContainer').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
